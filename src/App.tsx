@@ -5,6 +5,7 @@ import TransactionForm from "./components/TransactionForm"; // Importing Transac
 import TransactionList from "./components/TransactionList"; // Importing TransactionList to display recent transactions
 import { Wallet } from "lucide-react"; // Importing Wallet icon from lucide-react for UI
 import { useTheme } from "./hooks/useTheme"; // Importing the useTheme hook
+import { Sun, Moon } from "lucide-react"; // Import icons
 
 // Main App component
 function App() {
@@ -29,7 +30,11 @@ function App() {
               <button
                 onClick={() => setTheme(theme === "light" ? "dark" : "light")}
                 className="ml-4 p-2 bg-gray-200 rounded">
-                Toggle Theme
+                {theme === "light" ? (
+                  <Moon className="h-5 w-5" />
+                ) : (
+                  <Sun className="h-5 w-5" />
+                )}
               </button>
             </div>
           </div>
