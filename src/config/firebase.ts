@@ -5,13 +5,12 @@ import { getFirestore } from 'firebase/firestore'; // Function to get Firestore 
 
 // Firebase configuration object containing the project's specific settings
 const firebaseConfig = {
-  // Replace with your Firebase config values
-  apiKey: "YOUR_API_KEY", // API key for authenticating requests
-  authDomain: "YOUR_AUTH_DOMAIN", // Domain for Firebase Authentication
-  projectId: "YOUR_PROJECT_ID", // Unique identifier for the Firebase project
-  storageBucket: "YOUR_STORAGE_BUCKET", // Cloud Storage bucket for storing files
-  messagingSenderId: "YOUR_MESSAGING_SENDER_ID", // Unique sender ID for Firebase Cloud Messaging
-  appId: "YOUR_APP_ID" // Unique identifier for the Firebase app
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY, // API key for authenticating requests
+  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN, // Domain for Firebase Authentication
+  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID, // Unique identifier for the Firebase project
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET, // Cloud Storage bucket for storing files
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID, // Unique sender ID for Firebase Cloud Messaging
+  appId: process.env.REACT_APP_FIREBASE_APP_ID // Unique identifier for the Firebase app
 };
 
 // Initializing the Firebase app with the provided configuration
