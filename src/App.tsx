@@ -1,22 +1,19 @@
-import React from "react"; // Importing React library to use its features
-import { BudgetProvider } from "./context/BudgetContext"; // Importing BudgetProvider to manage budget state
-import Dashboard from "./components/Dashboard"; // Importing Dashboard component to display budget overview
-import TransactionForm from "./components/TransactionForm"; // Importing TransactionForm to add new transactions
-import TransactionList from "./components/TransactionList"; // Importing TransactionList to display recent transactions
-import { Wallet } from "lucide-react"; // Importing Wallet icon from lucide-react for UI
-import { useTheme } from "./hooks/useTheme"; // Importing the useTheme hook
-import { Sun, Moon } from "lucide-react"; // Import icons
+// App.tsx
+import { BudgetProvider } from "./context/BudgetContext"; // Ensure this import is correct
+import Dashboard from "./components/Dashboard"; // Import your components
+import TransactionForm from "./components/TransactionForm";
+import TransactionList from "./components/TransactionList";
+import { useTheme } from "./hooks/useTheme"; // Import the useTheme hook
+import { Moon, Sun, Wallet } from "lucide-react"; // Import icons
 
-// Main App component
 function App() {
   const { theme, setTheme } = useTheme(); // Using the useTheme hook
 
   return (
-    // Wrapping the entire application in BudgetProvider to provide budget context to all components
     <BudgetProvider>
+      {" "}
+      {/* Wrap your application with BudgetProvider */}
       <div className={`min-h-screen bg-gray-100 ${theme}`}>
-        {" "}
-        {/* Apply the theme class */}
         <nav className="bg-white shadow-sm">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between h-16 items-center">
@@ -61,4 +58,4 @@ function App() {
   );
 }
 
-export default App; // Exporting the App component for use in other parts of the application
+export default App; // Exporting the App component

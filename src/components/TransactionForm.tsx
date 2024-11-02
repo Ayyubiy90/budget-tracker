@@ -5,7 +5,7 @@ import React from "react";
 import { useForm } from "react-hook-form";
 
 // Importing the useBudget hook to access budget-related functions such as adding transactions
-import { useBudget } from "../context/BudgetContext";
+import { useBudget } from '../context/useBudget'
 
 // Importing the TransactionCategory type for type safety in the form data
 import { TransactionCategory } from "../types/budgets";

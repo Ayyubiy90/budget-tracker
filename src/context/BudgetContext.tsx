@@ -1,12 +1,12 @@
 // Import necessary React hooks and context API
-import React, { createContext, useContext, useState, useEffect } from "react";
+import React, { createContext, useState, useEffect } from "react";
 // Import types for transactions, budgets, budget summary, and transaction categories
 import {
   Transaction,
   Budget,
   BudgetSummary,
   TransactionCategory,
-} from "../types/budget";
+} from "../types/budgets";
 
 // Define the shape of the context data for the budget management
 interface BudgetContextType {
@@ -182,14 +182,6 @@ export const BudgetProvider: React.FC<{ children: React.ReactNode }> = ({
   );
 };
 
-// Hook to access the budget context
-export const useBudget = () => {
-  const context = useContext(BudgetContext);
-  if (context === undefined) {
-    throw new Error("useBudget must be used within a BudgetProvider");
-  }
-  return context;
-};
 
 // Export the BudgetContext
 export default BudgetContext;

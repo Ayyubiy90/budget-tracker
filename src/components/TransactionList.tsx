@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 
 // Importing useBudget hook to access transactions from the budget context
-import { useBudget } from "../context/BudgetContext";
+import { useBudget } from '../context/useBudget'
 
 // Importing utility function to format currency amounts
 import { formatAmount } from "../utils/currency";
