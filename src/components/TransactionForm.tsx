@@ -5,10 +5,11 @@ import React from "react";
 import { useForm } from "react-hook-form";
 
 // Importing the useBudget hook to access budget-related functions such as adding transactions
-import { useBudget } from '../context/useBudget'
+import { useBudget } from "../context/useBudget";
 
 // Importing the TransactionCategory type for type safety in the form data
 import { TransactionCategory } from "../types/budgets";
+import { formatAmount } from "../utils/currency";
 
 // Defining the shape of the data that will be collected from the transaction form
 interface TransactionFormData {
@@ -41,13 +42,15 @@ const TransactionForm: React.FC = () => {
 
   // Function to handle form submission
   const onSubmit = (data: TransactionFormData) => {
-    // Adding the transaction using the addTransaction function
+    const formattedAmount = formatAmount(Number(data.amount), "USD"); // Assuming "USD" is the currency
+    console.log("Formatted Amount:", formattedAmount); // Or display it in a message
+
     addTransaction({
-      ...data, // Spread operator to include all form data
-      amount: Number(data.amount), // Ensuring the amount is a number
-      currency: "USD", // Setting a default currency
+      ...data,
+      amount: Number(data.amount),
+      currency: "USD",
     });
-    reset(); // Resetting the form fields after submission
+    reset();
   };
 
   // Returning the JSX for rendering the transaction form
