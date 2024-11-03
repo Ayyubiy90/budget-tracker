@@ -113,11 +113,12 @@ export const BudgetProvider: React.FC<{ children: React.ReactNode }> = ({
 
   // Function to add a new transaction
   const addTransaction = (transaction: Omit<Transaction, "id">) => {
-    const newTransaction = {
+    const newTransaction: Transaction = {
       ...transaction,
-      id: crypto.randomUUID(), // Generate a unique ID for the new transaction
+      amount: transaction.amount, // Keep it as a number
+      id: crypto.randomUUID(),
     };
-    setTransactions((prev) => [...prev, newTransaction]); // Update the state with the new transaction
+    setTransactions((prev) => [...prev, newTransaction]);
   };
 
   // Function to delete a transaction by its ID
@@ -181,7 +182,6 @@ export const BudgetProvider: React.FC<{ children: React.ReactNode }> = ({
     <BudgetContext.Provider value={value}>{children}</BudgetContext.Provider>
   );
 };
-
 
 // Export the BudgetContext
 export default BudgetContext;
