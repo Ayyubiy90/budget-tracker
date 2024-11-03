@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 
 // Importing useBudget hook to access transactions from the budget context
-import { useBudget } from '../context/useBudget'
+import { useBudget } from "../context/useBudget";
 
 // Importing utility function to format currency amounts
 import { formatAmount } from "../utils/currency";
@@ -83,11 +83,11 @@ const TransactionList: React.FC = () => {
             <tr className="text-left border-b dark:border-gray-700">
               <th className="pb-3 text-gray-600 dark:text-gray-300">Date</th>
               <th className="pb-3 text-gray-600 dark:text-gray-300">Type</th>
-              <th className=" pb-3 text-gray-600 dark:text-gray-300">
+              <th className="pb-3 text-gray-600 dark:text-gray-300">
                 Category
               </th>
               <th className="pb-3 text-gray-600 dark:text-gray-300">
-                Description 
+                Description
               </th>
               <th className="pb-3 text-gray-600 dark:text-gray-300 text-right">
                 Amount
@@ -129,10 +129,7 @@ const TransactionList: React.FC = () => {
                           ? "text-green-500"
                           : "text-red-500"
                       }>
-                      {formatAmount(
-                        transaction.amount || 0,
-                        transaction.currency
-                      )}
+                      {formatAmount(transaction.amount, transaction.currency)}
                     </span>
                   </td>
                 </tr>
